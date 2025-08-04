@@ -1,0 +1,24 @@
+# Default values for bootstrap.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployer:
+  domain: apps.cluster-guid.sandbox.opentlc.com
+  apiUrl: https://api.cluster-guid.sandbox.opentlc.com:6443
+
+user:
+  count: 0
+  base: user
+
+default:
+  source:
+    repoURL: https://github.com/rhpds/hcp-ocp-virt-gitops.git
+    targetRevision: main
+  namespace: openshift-gitops
+
+applications:
+  rhacm_hcp_patches:
+    source:
+      path: rhacm-hcp-patches
+    destination:
+      namespace: openshift-gitops
